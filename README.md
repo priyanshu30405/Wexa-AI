@@ -27,7 +27,7 @@
 | **Production** | _Add your Vercel/Netlify URL here after deploy_ |
 | **Repository** | [github.com/priyanshu30405/Wexa-AI](https://github.com/priyanshu30405/Wexa-AI) |
 
-> **Deploy on Vercel:** Import this repo → set **Root Directory** to `fittrack` → Build: `npm run build` → Output: `dist`. SPA routing is in `fittrack/vercel.json`.
+> **Deploy on Vercel:** Use the repo root (Root Directory = empty). Root `vercel.json` builds `fittrack/` automatically. Do **not** set Root Directory to `fittrack` if using the root config.
 
 ---
 
@@ -223,9 +223,11 @@ Detailed patterns → **[fittrack/COMPONENTS.md](./fittrack/COMPONENTS.md)**
 ### Vercel (recommended)
 
 1. Import [this repository](https://github.com/priyanshu30405/Wexa-AI) on Vercel.  
-2. **Root Directory:** `fittrack`  
-3. **Build Command:** `npm run build` · **Output Directory:** `dist`  
-4. Deploy and add the URL to [Live Demo](#live-demo) above.
+2. **Root Directory:** leave **empty** (repository root).  
+3. Vercel reads root `vercel.json` → builds `fittrack/` → output `fittrack/dist`.  
+4. Redeploy after pushing config fixes, then add the URL to [Live Demo](#live-demo) above.
+
+**If you see 404:** Settings → General → Root Directory must be empty, then **Redeploy**.
 
 ---
 

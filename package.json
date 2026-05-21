@@ -1,0 +1,11 @@
+{
+  "name": "wexa-ai",
+  "private": true,
+  "version": "1.0.0",
+  "description": "FitTrack — Wexa AI frontend assessment (monorepo root)",
+  "scripts": {
+    "dev": "npm run dev --prefix fittrack",
+    "build": "npm run build --prefix fittrack",
+    "preview": "npm run preview --prefix fittrack"
+  }
+}

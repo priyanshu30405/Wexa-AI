@@ -7,7 +7,7 @@
   <a href="#features">Features</a> ·
   <a href="#getting-started">Setup</a> ·
   <a href="#design-decisions">Design</a> ·
-  <a href="./COMPONENTS.md">Architecture</a>
+  <a href="./fittrack/COMPONENTS.md">Architecture</a>
 </p>
 
 <p align="center">
@@ -25,28 +25,28 @@
 | | Link |
 |---|------|
 | **Production** | _Add your Vercel/Netlify URL here after deploy_ |
-| **Repository** | _Add your GitHub repo URL here_ |
+| **Repository** | [github.com/priyanshu30405/Wexa-AI](https://github.com/priyanshu30405/Wexa-AI) |
 
-> **Deploy on Vercel:** Import the repo → set **Root Directory** to `fittrack` (if the repo contains a parent folder) → Build: `npm run build` → Output: `dist`. SPA routing is configured in `vercel.json`.
+> **Deploy on Vercel:** Import this repo → set **Root Directory** to `fittrack` → Build: `npm run build` → Output: `dist`. SPA routing is in `fittrack/vercel.json`.
 
 ---
 
 ## Preview
 
 <p align="center">
-  <img src="./docs/screenshots/landing-desktop.png" alt="FitTrack landing page — hero with workout, nutrition, and progress preview cards" width="900" />
+  <img src="./fittrack/docs/screenshots/landing-desktop.png" alt="FitTrack landing page — hero with workout, nutrition, and progress preview cards" width="900" />
   <br />
   <em>Landing page — hero section with live product preview (Workouts, Nutrition, Progress)</em>
 </p>
 
 <details>
-<summary>More screenshots (add images to <code>docs/screenshots/</code>)</summary>
+<summary>More screenshots (optional — add PNGs to <code>fittrack/docs/screenshots/</code>)</summary>
 
 <br />
 
 | Landing (mobile) | Auth flow | Dashboard |
 |------------------|-----------|-----------|
-| ![Mobile](./docs/screenshots/landing-mobile.png) | ![Auth](./docs/screenshots/auth-step1.png) | ![Dashboard](./docs/screenshots/dashboard-home.png) |
+| ![Mobile](./fittrack/docs/screenshots/landing-mobile.png) | ![Auth](./fittrack/docs/screenshots/auth-step1.png) | ![Dashboard](./fittrack/docs/screenshots/dashboard-home.png) |
 
 </details>
 
@@ -142,9 +142,8 @@ FitTrack is a fictional fitness SaaS product focused on **UI/UX polish**, **resp
 ### Install & run
 
 ```bash
-# Clone your repository
-git clone <your-repo-url>
-cd fittrack   # use "cd fittrack" if the repo root contains a fittrack/ folder
+git clone https://github.com/priyanshu30405/Wexa-AI.git
+cd Wexa-AI/fittrack
 
 npm install
 npm run dev
@@ -166,29 +165,23 @@ Open **http://localhost:5173** (or the port Vite prints in the terminal).
 ## Project structure
 
 ```
-fittrack/
-├── public/                 # Static assets, favicon
-├── docs/screenshots/       # README images (see docs/screenshots/README.md)
-├── src/
-│   ├── components/
-│   │   ├── ui/             # Button, Card, Input, Dialog, etc.
-│   │   ├── landing/        # Navbar, Hero, Pricing, Footer…
-│   │   ├── auth/           # Onboarding steps, Google sign-in
-│   │   ├── dashboard/      # Sidebar, stats, charts, workout list
-│   │   └── shared/         # Theme, i18n, scroll reveal, auth guard
-│   ├── pages/
-│   │   ├── LandingPage.tsx
-│   │   ├── AuthPage.tsx
-│   │   └── dashboard/      # Home, Workouts, Nutrition, Progress, Settings
-│   ├── store/              # authStore, themeStore, onboardingStore
-│   ├── i18n/locales/       # en.json, hi.json
-│   └── lib/                # schemas (Zod), utils, constants
-├── COMPONENTS.md           # Component architecture notes
-├── vercel.json             # SPA rewrites for deployment
-└── README.md
+Wexa-AI/
+├── README.md                 # This file (shown on GitHub)
+└── fittrack/                 # React application
+    ├── public/
+    ├── docs/screenshots/     # README images
+    ├── src/
+    │   ├── components/       # ui, landing, auth, dashboard, shared
+    │   ├── pages/
+    │   ├── store/
+    │   ├── i18n/
+    │   └── lib/
+    ├── COMPONENTS.md
+    ├── vercel.json
+    └── package.json
 ```
 
-Detailed patterns and extension points → **[COMPONENTS.md](./COMPONENTS.md)**
+Detailed patterns → **[fittrack/COMPONENTS.md](./fittrack/COMPONENTS.md)**
 
 ---
 
@@ -197,12 +190,12 @@ Detailed patterns and extension points → **[COMPONENTS.md](./COMPONENTS.md)**
 | Topic | Choice | Rationale |
 |-------|--------|-----------|
 | **Typography** | Plus Jakarta Sans | Modern SaaS feel, strong hierarchy |
-| **Color** | Emerald primary + amber accent | Energy, health, and trust without cliché “gym red” |
-| **Layout** | Mobile-first, `sm` / `md` / `lg` breakpoints | Assessment requires 375px / 768px / 1440px+ |
-| **Motion** | Subtle scroll + step transitions | Polish without distracting motion |
-| **Data** | Zustand + `localStorage` | Meets “mock data OK” requirement; easy to swap for API later |
-| **Google auth** | Demo account picker | No OAuth keys needed; realistic UX for reviewers |
-| **Accessibility** | Focus rings, `aria-label`s, inline errors, semantic forms | Supports a11y scoring criteria |
+| **Color** | Emerald primary + amber accent | Energy, health, and trust |
+| **Layout** | Mobile-first breakpoints | 375px / 768px / 1440px+ |
+| **Motion** | Subtle scroll + step transitions | Polish without distraction |
+| **Data** | Zustand + `localStorage` | Mock data per assessment guidelines |
+| **Google auth** | Demo account picker | No OAuth keys; realistic UX |
+| **Accessibility** | Focus rings, ARIA labels, inline errors | Meets a11y criteria |
 
 ---
 
@@ -218,10 +211,10 @@ Detailed patterns and extension points → **[COMPONENTS.md](./COMPONENTS.md)**
 | Framer Motion + form validation (RHF + Zod) | Done |
 | i18n (English + second language) | Done (Hindi) |
 | Dark mode | Done |
-| Component documentation | [COMPONENTS.md](./COMPONENTS.md) |
-| Public GitHub repo | Done (add live URL above) |
-| Live deploy (Vercel/Netlify) | Pending — add link above |
-| Screenshots in README | Add PNGs to `docs/screenshots/` |
+| Component documentation | [COMPONENTS.md](./fittrack/COMPONENTS.md) |
+| Public GitHub repo | Done |
+| Live deploy (Vercel/Netlify) | Add URL in [Live Demo](#live-demo) |
+| Screenshots in README | `landing-desktop.png` included |
 
 ---
 
@@ -229,17 +222,10 @@ Detailed patterns and extension points → **[COMPONENTS.md](./COMPONENTS.md)**
 
 ### Vercel (recommended)
 
-1. Push to GitHub (public repository).  
-2. [vercel.com](https://vercel.com) → **Add New Project** → import repo.  
-3. If the app is in a subfolder: **Root Directory** = `fittrack`.  
-4. **Build Command:** `npm run build` · **Output Directory:** `dist`  
-5. Deploy and paste the URL into the [Live Demo](#live-demo) section above.
-
-### Netlify
-
-- Build command: `npm run build`  
-- Publish directory: `dist`  
-- Add a `_redirects` or `netlify.toml` SPA rule: `/* /index.html 200`
+1. Import [this repository](https://github.com/priyanshu30405/Wexa-AI) on Vercel.  
+2. **Root Directory:** `fittrack`  
+3. **Build Command:** `npm run build` · **Output Directory:** `dist`  
+4. Deploy and add the URL to [Live Demo](#live-demo) above.
 
 ---
 

@@ -216,21 +216,6 @@ Detailed patterns → **[fittrack/COMPONENTS.md](./fittrack/COMPONENTS.md)**
 | Live deploy (Vercel/Netlify) | Add URL in [Live Demo](#live-demo) |
 | Screenshots in README | `landing-desktop.png` included |
 
----
-
-## Deployment
-
-### Vercel (recommended)
-
-1. Import [this repository](https://github.com/priyanshu30405/Wexa-AI) on Vercel.  
-2. **Root Directory:** leave **empty** (repository root).  
-3. Vercel reads root `vercel.json` → builds `fittrack/` → output `fittrack/dist`.  
-4. Redeploy after pushing config fixes, then add the URL to [Live Demo](#live-demo) above.
-
-**If you see 404:** Settings → General → Root Directory must be empty, then **Redeploy**.
-
----
-
 ## Author
 
 **Priyanshu Raj**  
